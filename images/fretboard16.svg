@@ -1,0 +1,54 @@
+<svg width="800" height="227" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond du manche (aspect bois) -->
+  <rect x="2.75%" width="100%" height="100%" fill="#784a0d"/>
+  
+  <!-- Nut (barre de tête) -->
+  <line x1="2.75%" y1="0%" x2="2.75%" y2="100%" stroke="black" stroke-width="8"/>
+  
+  <!-- Frettes en couleur acier -->
+  <!--line x1="2.5%"   y1="0%" x2="2.5%"   y2="100%" stroke="#C0C0C0" stroke-width="2"-->
+  <line x1="9%"  y1="0%" x2="9%"  y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="15.25%" y1="0%" x2="15.25%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="21.5%" y1="0%" x2="21.5%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="27.75%" y1="0%" x2="27.75%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="34%" y1="0%" x2="34%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="40.25%" y1="0%" x2="40.25%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="46.5%" y1="0%" x2="46.5%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="52.75%" y1="0%" x2="52.75%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="59%" y1="0%" x2="59%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="65.25%" y1="0%" x2="65.25%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="71.5%" y1="0%" x2="71.5%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="77.75%" y1="0%" x2="77.75%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="84%" y1="0%" x2="84%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="90.25%" y1="0%" x2="90.25%" y2="100%" stroke="#C0C0C0" stroke-width="2"/>
+  <line x1="96.5%" y1="0%" x2="96.5%" y2="100%" stroke="#C0C0C0" stroke-width="2"/> 
+
+  <!-- Les repères -->  
+  <!-- Définition du dégradé radial pour l'effet enfoncé -->
+  <defs>
+    <radialGradient id="sunkenGradient" cx="0.5" cy="0.5" r="0.5" fx="0.35" fy="0.35">
+      <stop offset="0%" stop-color="#333333" /> <!-- Centre sombre pour la profondeur -->
+      <stop offset="70%" stop-color="#000000" /> <!-- Bord noir -->
+      <stop offset="100%" stop-color="#444444" /> <!-- Légère lueur autour -->
+    </radialGradient>
+  </defs>
+  <!-- Repères enfoncés -->
+  <circle cx="18.375%" cy="50%" r="10" fill="url(#sunkenGradient)" />
+  <circle cx="30.8755%" cy="50%" r="10" fill="url(#sunkenGradient)" />
+  <circle cx="43.375%" cy="50%" r="10" fill="url(#sunkenGradient)" />
+  <circle cx="55.875%" cy="50%" r="10" fill="url(#sunkenGradient)" />
+  <circle cx="74.625%" cy="32%" r="10" fill="url(#sunkenGradient)" />
+  <circle cx="74.625%" cy="67%" r="10" fill="url(#sunkenGradient)" />
+  <circle cx="93.375%" cy="50%" r="10" fill="url(#sunkenGradient)" />
+
+  <!-- Cordes de guitare -->
+  <!-- Cordes fines en noir -->
+  <line x1="0%" y1="4.00%"  x2="100%" y2="4.00%"  stroke="#000000" stroke-width="2"/>
+  <line x1="0%" y1="22.40%" x2="100%" y2="22.40%" stroke="#000000" stroke-width="2"/>
+  <line x1="0%" y1="40.80%" x2="100%" y2="40.80%" stroke="#000000" stroke-width="2"/>
+
+  <!-- Cordes épaisses en bronze/cuivre -->
+  <line x1="0%" y1="59.20%" x2="100%" y2="59.20%" stroke="#B87333" stroke-width="3"/>
+  <line x1="0%" y1="77.60%" x2="100%" y2="77.60%" stroke="#B87333" stroke-width="4"/>
+  <line x1="0%" y1="96.00%" x2="100%" y2="96.00%" stroke="#B87333" stroke-width="5"/>
+</svg>

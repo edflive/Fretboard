@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visualiseur de Gammes de Guitare</title>
+  <!-- Inclusion de Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-100">
+  <header class="bg-gray-800 text-white py-4">
+    <h1 class="text-3xl font-bold text-center">Visualiseur de Gammes de Guitare</h1>
+  </header>
+  <main class="p-4">
+
+    <!-- Barre de configuration modernisée -->
+    <section
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 p-3 bg-white shadow-md rounded-lg mb-6 max-w-4xl mx-auto transition-all duration-300 hover:shadow-lg"
+    >
+      <!-- Note de base -->
+      <div class="flex items-center group min-w-[9rem]">
+        <label
+          for="root-note"
+          class="mr-2 text-xs font-medium text-gray-700 uppercase group-hover:text-blue-500 transition-colors"
+        >
+          Clé
+        </label>
+        <select
+          id="root-note"
+          class="w-28 bg-gray-50 border border-gray-300 rounded-md p-1.5 text-gray-700 text-xs focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-gray-100"
+        >
+          <option value="C">Do</option>
+          <option value="C#">Do#</option>
+          <option value="D">Ré</option>
+          <option value="D#">Ré#</option>
+          <option value="E">Mi</option>
+          <option value="F">Fa</option>
+          <option value="F#">Fa#</option>
+          <option value="G">Sol</option>
+          <option value="G#">Sol#</option>
+          <option value="A">La</option>
+          <option value="A#">La#</option>
+          <option value="B">Si</option>
+        </select>
+      </div>
+
+      <!-- Gamme -->
+      <div class="flex items-center group min-w-[9rem]">
+        <label
+          for="scale-type"
+          class="mr-2 text-xs font-medium text-gray-700 uppercase group-hover:text-blue-500 transition-colors"
+        >
+          Gamme
+        </label>
+        <select
+          id="scale-type"
+          class="w-28 bg-gray-50 border border-gray-300 rounded-md p-1.5 text-gray-700 text-xs focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-gray-100"
+        >
+          <option value="major">Majeure</option>
+          <option value="minor">Mineure</option>
+          <option value="pentatonicMinor">Penta Min.</option>
+          <option value="pentatonicMajor">Penta Maj.</option>
+          <option value="blues">Blues</option>
+          <option value="mixolydian">Mixolydien</option>
+          <option value="dorian">Dorien</option>
+          <option value="phrygian">Phrygien</option>
+          <option value="lydian">Lydien</option>
+          <option value="aeolian">Éolien</option>
+          <option value="locrian">Locrien</option>
+        </select>
+      </div>
+
+      <!-- Nombre de frettes -->
+      <div class="flex items-center group min-w-[9rem]">
+        <label
+          for="fret-count"
+          class="mr-2 text-xs font-medium text-gray-700 uppercase group-hover:text-blue-500 transition-colors"
+        >
+          Frettes
+        </label>
+        <select
+          id="fret-count"
+          class="w-28 bg-gray-50 border border-gray-300 rounded-md p-1.5 text-gray-700 text-xs focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-gray-100"
+        >
+          <option value="13">13 frettes</option>
+          <option value="16">16 frettes</option>
+          <option value="20">20 frettes</option>
+        </select>
+      </div>
+
+      <!-- Ordre des cordes -->
+      <div class="flex items-center group min-w-[9rem]">
+        <label
+          for="string-order"
+          class="mr-2 text-xs font-medium text-gray-700 uppercase group-hover:text-blue-500 transition-colors"
+        >
+          Vue
+        </label>
+        <select
+          id="string-order"
+          class="w-28 bg-gray-50 border border-gray-300 rounded-md p-1.5 text-gray-700 text-xs focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 hover:bg-gray-100"
+        >
+          <option value="lowBottom">Spectateurs</option>
+          <option value="lowTop">Guitariste</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="Asemitone-colors" class="grid grid-cols-4 gap-2 mb-6 max-w-xl mx-auto">
+      <!-- Boutons générés dynamiquement -->
+    </section>
+    <!-- Contrôles pour les 12 demi-tons (deuxième section, ajustée) -->
+    <section
+      id="semitone-colors"
+      class="grid grid-cols-6 gap-4 mb-6 max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-4"
+    >
+    </section>
+    <!-- Fretboard -->
+    <section class="relative max-w-4xl mx-auto">
+      <!-- L'image du manche sera mise à jour en fonction du nombre de frettes -->
+      <img id="fretboard-image" src="images/fretboard13.svg" alt="Manche de guitare" class="w-full">
+      <!-- Conteneur pour les marqueurs avec z-index pour être au-dessus -->
+      <div id="markers-container" class="absolute inset-0 z-10"></div>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

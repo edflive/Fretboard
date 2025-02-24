@@ -1,0 +1,11 @@
+{
+    "name": "fretboard-visualizer",
+    "version": "1.0.0",
+
+    "scripts": {
+        "build": "mkdir -p dist && node build.js"
+    },
+    "devDependencies": {
+      "html-minifier": "^4.0.0"
+    }
+  }
