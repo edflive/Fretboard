@@ -48,18 +48,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Couleurs par défaut pour les 12 demi-tons
   const defaultColors = [
-    "#FF0000", // 0 : C
-    "#FF7F00", // 1 : C#
-    "#FFFF00", // 2 : D
-    "#7FFF00", // 3 : D#
-    "#00FF00", // 4 : E
-    "#00FF7F", // 5 : F
-    "#00FFFF", // 6 : F#
-    "#007FFF", // 7 : G
-    "#0000FF", // 8 : G#
-    "#7F00FF", // 9 : A
-    "#FF00FF", // 10: A#
-    "#FF007F"  // 11: B
+    "#FF9696", // 0 : C
+    "#646464", // 1 : C#
+    "#7D7D7D", // 2 : D
+    "#FCD963", // 3 : D#
+    "#FFAF64", // 4 : E
+    "#AFFFAF", // 5 : F
+    "#FCAD64", // 6 : F#
+    "#EE811B", // 7 : G
+    "#AFAFAF", // 8 : G#
+    "#C8C8C8", // 9 : A
+    "#E1E1E1", // 10: A#
+    "#FFFFFF"  // 11: B
   ];
 
   // Chargement de l'option d'affichage des notes
