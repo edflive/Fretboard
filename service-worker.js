@@ -1,4 +1,4 @@
-const CACHE_NAME = "fretboard-cache-v1";
+const CACHE_NAME = "fretboard-cache-v1.1";
 const urlsToCache = [
   "./",                // racine
   "./index.html",      // page principale

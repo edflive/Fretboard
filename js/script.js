@@ -36,14 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
     locrian: [0, 1, 3, 5, 6, 8, 10]             // Mode locrien (rare, sonorité instable, ex. B C D E F G A)
 };
 
-  // Accordage standard (du mi grave au mi aigu)
+  // Accordage standard (du mi grave au mi aigu) inversé pour le grave en bas
   const strings = [
-    { note: 'E', frequency: 82.41 },
-    { note: 'A', frequency: 110.00 },
-    { note: 'D', frequency: 146.83 },
-    { note: 'G', frequency: 196.00 },
+    { note: 'E', frequency: 329.63 },
     { note: 'B', frequency: 246.94 },
-    { note: 'E', frequency: 329.63 }
+    { note: 'G', frequency: 196.00 },
+    { note: 'D', frequency: 146.83 },
+    { note: 'A', frequency: 110.00 },
+    { note: 'E', frequency: 82.41 }
   ];
 
   // Couleurs par défaut pour les 12 demi-tons
@@ -76,12 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const storedFretCount = localStorage.getItem('fretCount');
   if (storedFretCount) {
     fretCountSelect.value = storedFretCount;
-  }
-
-  // Chargement de l'option d'ordre des cordes depuis le localStorage (si défini)
-  const storedStringOrder = localStorage.getItem('stringOrder');
-  if (storedStringOrder) {
-    stringOrderSelect.value = storedStringOrder;
   }
 
   // Pour chaque demi-ton, indique s'il est affiché sur le manche (sera mis à jour par updateAllControls)
@@ -142,19 +136,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedRoot = rootSelect.value;
     const totalFrets = parseInt(fretCountSelect.value, 10);
 
-    // Détermine l'ordre des cordes selon le select
-    const stringOrder = stringOrderSelect.value;
-    const currentStrings = (stringOrder === "lowTop") ? [...strings].reverse() : strings;
-
-    currentStrings.forEach((string, stringIndex) => {
+    strings.forEach((string, stringIndex) => {
       for (let fret = 0; fret <= totalFrets; fret++) {
         const note = getNoteAtFret(string.note, fret);
         const semitoneDiff = (getNoteIndex(note) - getNoteIndex(selectedRoot) + 12) % 12;
         if (!visibleMapping[semitoneDiff]) continue;
         const markerColor = colorMapping[semitoneDiff];
         const marker = document.createElement('div');
-        marker.classList.add( 'marker',
-          'w-6', 'h-6', 'rounded-full', 'flex',
+        marker.classList.add(
+          'marker', 'w-6', 'h-6',
+          'rounded-full', 'flex',
           'justify-center', 'items-center', 'font-bold',
           'cursor-pointer', 'select-none', 'absolute', 'text-sm'
         );
@@ -167,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         marker.style.color = getContrastColor(markerColor);
 
         const leftPercent = (fret / totalFrets) * 100;
-        const topPercent = ((stringIndex + 0.5) / currentStrings.length) * 100;
+        const topPercent = ((stringIndex + 0.5) / strings.length) * 100;
         marker.style.left = `calc(${leftPercent}% - 1rem)`;
         marker.style.top = `calc(${topPercent}% - 1rem)`;
 
@@ -216,10 +207,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const button = document.createElement('button');
       button.setAttribute('data-index', i);
       button.classList.add(...BUTTON_CLASSES);
+      button.style.width ='115px';
       button.style.backgroundColor = colorMapping[i];
       button.style.color = getContrastColor(colorMapping[i]);
       
-button.style.boxShadow = '2px 2px 5px rgba(0, 0, 0, 0.3)';
+      button.style.boxShadow = '2px 2px 5px rgba(0, 0, 0, 0.3)';
 
       // Création de la case à cocher
       const checkbox = document.createElement('input');
